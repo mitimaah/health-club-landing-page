@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" type="image/png" href="img/white-leaf.png" />
+    <link rel="stylesheet" href="my-style.css" />
+
+    <title>Health club | Dołącz do nas</title>
+
+    <script defer src="my-scipt.js"></script>
+  </head>
+  <body>
+    <nav class="nav">
+      <img src="img/leaf.png" alt="leaf logo" class="nav__logo" />
+      <div class="logo__position">
+        <a
+          id="logo__weight"
+          class="nav__link"
+          href="https://www.healthclubs.com/"
+          >HEALTH CLUB</a
+        >
+      </div>
+      <ul class="nav__links">
+        <li class="nav__item">
+          <a onclick="myFunction()" class="nav__link nav__link--btn" href="#">
+            Miasta
+          </a>
+          <div id="myDropdown" class="dropdown-content">
+            <a href="#">Warszawa</a>
+            <a href="#">Kraków</a>
+            <a href="#">Poznań</a>
+            <a href="#">Łódź</a>
+          </div>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Nasza misja</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link" href="#">Opinie</a>
+        </li>
+        <li class="nav__item">
+          <a class="nav__link nav__link--btn btn--show-modal" href="#"
+            >Dołącz do nas</a
+          >
+        </li>
+      </ul>
+    </nav>
+
+    <div class="modal hidden">
+      <button class="btn--close-modal">&times;</button>
+      <h2 class="modal__header">
+        Wypełnij formularz<br />
+        i razem z nami <br />
+        dbaj o zdrowie
+      </h2>
+      <form class="modal__form">
+        <label>Imię</label>
+        <input type="text" />
+        <label>Nazwisko</label>
+        <input type="text" />
+        <label>Adres e-mail</label>
+        <input type="email" />
+        <button class="btn">Dalej &rarr;</button>
+      </form>
+    </div>
+
+    <div class="section-1">
+      <img
+        src="img/sports-girl-with-dumbbells.jpg"
+        alt="Girl"
+        class="girl__img"
+      />
+      <div class="girl__header">
+        <h3>W zdrowym ciele zdrowy duch</h3>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
+          sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
+          debitis ducimus.
+        </p>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <ul class="footer__nav">
+        <li class="footer__item">
+          <a class="footer__link" href="#">Miasta</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Nasza misja</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Opinie</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Dołącz do nasz</a>
+        </li>
+        <li class="footer__item">
+          <a class="footer__link" href="#">Kontakt</a>
+        </li>
+      </ul>
+      <img src="img/white-leaf.png" alt="Logo" class="footer__logo" />
+     
+    </footer>
+
+  </body>
+</html>
