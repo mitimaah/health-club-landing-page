@@ -10,6 +10,7 @@ const surname = document.getElementById('surname');
 const age = document.getElementById('age');
 const email = document.getElementById('email');
 
+////////////////////////////
 // DROPDOWN MENU
 function dropdownMenu() {
   document.getElementById('dropdownMenu').classList.toggle('show');
@@ -29,7 +30,20 @@ window.onclick = e => {
   }
 };
 
-// FORM
+///////////////////////////////////////
+// Page navigation
+document.querySelector('.nav__links').addEventListener('click', function (e) {
+  e.preventDefault();
+
+  // Matching strategy
+  if (e.target.classList.contains('nav__link')) {
+    const id = e.target.getAttribute('href');
+    document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+  }
+});
+
+//////////////////////////////////
+// FORM MODAL WINDOW
 const openModal = function (e) {
   e.preventDefault();
   modal.classList.remove('hidden');
@@ -121,3 +135,62 @@ function isEmail(email) {
     email
   );
 }
+
+
+//////////////////////////////////////
+// Slider
+const slider = function () {
+  const slides = document.querySelectorAll('.slide');
+  const btnLeft = document.querySelector('.slider__btn--left');
+  const btnRight = document.querySelector('.slider__btn--right');
+
+  
+  let curSlide = 0;
+  const maxSlide = slides.length;
+
+  const goToSlide = function (slide) {
+    slides.forEach(
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+    );
+  };
+
+  // Next slide
+  const nextSlide = function () {
+    if (curSlide === maxSlide - 1) {
+      curSlide = 0;
+    } else {
+      curSlide++;
+    }
+
+    goToSlide(curSlide);
+  };
+
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide - 1;
+    } else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+  };
+
+  const init = function () {
+    goToSlide(0);
+  };
+  init();
+
+  // Event handlers
+  btnRight.addEventListener('click', nextSlide);
+  btnLeft.addEventListener('click', prevSlide);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowLeft') prevSlide();
+    e.key === 'ArrowRight' && nextSlide();
+  });
+
+  
+};
+slider();
+
+///////////////////////////////////////
+///////////////////////////////////////
