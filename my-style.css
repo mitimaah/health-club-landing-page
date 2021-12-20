@@ -1,8 +1,15 @@
 :root {
   --color-primary: #89c4afa1;
   --color-primary-darker: #5fad92a1;
+  /* Warto przechowywać wartości, których uzywasz w kilku miejscach w CSS variables, Dodałam kilka dla przykładu */
+  --body-background-color: #f3f3f3;
+  --text-color-base: #444;
+  --line-height-base: 1.9;
+  --font-family-base: 'Poppins', sans-serif;
+  --font-weight-base: 300;
 }
 
+/* CSS reset */
 * {
   margin: 0;
   padding: 0;
@@ -15,11 +22,11 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
-  color: #444;
-  line-height: 1.9;
-  background-color: #f3f3f3;
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-base);
+  color: var(--text-color-base);
+  line-height: var(--line-height-base);
+  background-color: var(--body-background-color);
 }
 
 .btn {
@@ -149,7 +156,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   max-width: 60rem;
-  background-color: #f3f3f3;
+  background-color: var(--body-background-color);
   padding: 4rem 4rem;
   box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
   z-index: 1000;
@@ -246,20 +253,20 @@ body {
   visibility: visible;
 }
 
-/* SECTION girl */
-.section-girl {
+/* SECTION hero */
+.hero {
   margin-top: 6.2rem;
   margin-bottom: 6rem;
   display: flex;
   align-items: center;
 }
 
-.girl__img {
+.hero__img {
   height: 410px;
   padding-left: 7rem;
 }
 
-.girl__header {
+.hero__header {
   font-size: 2rem;
   padding-left: 7rem;
   padding-right: 6rem;
@@ -274,7 +281,7 @@ body {
 }
 
 .section__title--mission {
-  max-width: 80rem; 
+  max-width: 80rem;
   margin: 0 auto 4rem auto;
 }
 

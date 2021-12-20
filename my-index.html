@@ -1,194 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" type="image/png" href="img/leaf.png" />
-    <link rel="stylesheet" href="my-style.css" />
+<!-- 
+    Drobiazg - w tym przypadku content jest po polsku więc atrybut lang powininien być "pl"
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang 
+  -->
 
-    <title>Health club | Dołącz do nas</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
+  <link rel="shortcut icon" type="image/png" href="img/leaf.png" />
+  <link rel="stylesheet" href="my-style.css" />
 
-    <script defer src="my-scipt.js"></script>
-  </head>
-  <body>
-    <nav class="nav">
-      <img src="img/leaf.png" alt="leaf logo" class="nav__logo" />
-      <div class="logo__position">
-        <a
-          id="logo__weight"
-          class="nav__link"
-          href="https://www.healthclubs.com/"
-          >HEALTH CLUB</a
-        >
-      </div>
-      <ul class="nav__links">
-        <li class="nav__item">
-          <a onclick="dropdownMenu()" class="nav__link nav__link--btn" href="#">
-            Miasta
-          </a>
-          <div id="dropdownMenu" class="dropdown-content">
-            <a href="#">Warszawa</a>
-            <a href="#">Kraków</a>
-            <a href="#">Poznań</a>
-            <a href="#">Łódź</a>
-          </div>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#section--mission">Nasza misja</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link" href="#section--slider">Opinie</a>
-        </li>
-        <li class="nav__item">
-          <a class="nav__link nav__link--btn btn--show-modal" href="#"
-            >Dołącz do nas</a
-          >
-        </li>
-      </ul>
-    </nav>
+  <title>Health club | Dołącz do nas</title>
 
-    <div class="modal hidden">
-      <button class="btn--close-modal">&times;</button>
-      <h2 class="modal__header">
-        Wypełnij formularz<br />
-        i razem z nami <br />
-        dbaj o zdrowie
-      </h2>
-      <form class="modal__form">
-        <div class="form-control">
-          <label>Imię</label>
-          <input type="text" id="username" />
-          <small>Error message</small>
-        </div>
-        <div class="form-control">
-          <label>Nazwisko</label>
-          <input type="text" id="surname" />
-          <small>Error message</small>
-        </div>
-        <div class="form-control">
-          <label>Wiek</label>
-          <input type="number" id="age" min="18" />
-          <small>Error message</small>
-        </div>
-        <div class="form-control">
-          <label>Adres e-mail</label>
-          <input type="email" id="email" />
-          <small>Error message</small>
-        </div>
-        <button class="btn" type="submit">Dalej &rarr;</button>
-      </form>
+  <script defer src="my-scipt.js"></script>
+</head>
+
+<body>
+  <nav class="nav">
+    <img src="img/leaf.png" alt="leaf logo" class="nav__logo" />
+    <div class="logo__position">
+      <a id="logo__weight" class="nav__link" href="/my-index.html">HEALTH CLUB</a>
     </div>
-    <div class="overlay hidden"></div>
+    <ul class="nav__links">
+      <li class="nav__item">
+        <!-- Czy to powinien być <a> element skoro donikąd nie zabiera?-->
+        <a class="nav__link nav__link--btn dropdown__toggle" href="#">
+          Miasta
+        </a>
+        <div id="dropdownMenu" class="dropdown-content">
+          <a href="#">Warszawa</a>
+          <a href="#">Kraków</a>
+          <a href="#">Poznań</a>
+          <a href="#">Łódź</a>
+        </div>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#section--mission">Nasza misja</a>
+      </li>
+      <li class="nav__item">
+        <a class="nav__link" href="#section--slider">Opinie</a>
+      </li>
+      <li class="nav__item">
+        <!-- Czy to powinien być <a> element skoro donikąd nie zabiera?-->
+        <a class="nav__link nav__link--btn btn--show-modal" href="#">Dołącz do nas</a>
+      </li>
+    </ul>
+  </nav>
 
-    <div class="section-girl">
-      <img
-        src="img/sports-girl-with-dumbbells.jpg"
-        alt="Girl"
-        class="girl__img"
-      />
-      <div class="girl__header">
-        <h3>W zdrowym ciele zdrowy duch</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
-          sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
-          debitis ducimus.
-        </p>
+  <div class="modal hidden">
+    <button class="btn--close-modal">&times;</button>
+    <h2 class="modal__header">
+      Wypełnij formularz<br />
+      i razem z nami <br />
+      dbaj o zdrowie
+    </h2>
+    <form class="modal__form">
+      <div class="form-control">
+        <label>Imię</label>
+        <input type="text" id="username" />
+        <small>Error message</small>
       </div>
+      <div class="form-control">
+        <label>Nazwisko</label>
+        <input type="text" id="surname" />
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Wiek</label>
+        <input type="number" id="age" min="18" />
+        <small>Error message</small>
+      </div>
+      <div class="form-control">
+        <label>Adres e-mail</label>
+        <input type="email" id="email" />
+        <small>Error message</small>
+      </div>
+      <button class="btn" type="submit">Dalej &rarr;</button>
+    </form>
+  </div>
+  <div class="overlay hidden"></div>
+
+  <!-- Nowa sekcja - hero  -->
+  <section class="hero">
+    <img src="img/sports-girl-with-dumbbells.jpg" alt="Girl" class="hero__img" />
+    <header class="hero__header">
+      <h3>W zdrowym ciele zdrowy duch</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
+        sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
+        debitis ducimus.
+      </p>
+    </header>
+  </section>
+
+  <section class="section__mission" id="section--mission">
+    <header class="section__title--mission">
+      <h2 class="section__description">NASZA MISJA</h2>
+      <h1 class="section__header">Jesteśmy tu po to, by dbać o Ciebie<br />i Twoje zdrowie!</h1>
+      <button class="btn__mission">Dalej &rarr;</button>
+    </header>
+  </section>
+
+  <section class="section" id="section--slider">
+    <header class="section__title section__title--testimonials">
+      <h2 class="section__description">OPINIE</h2>
+      <h3 class="section__header">Sprawdź, co mówią o nas inni</h3>
+    </header>
+
+    <div class="slider">
+      <div class="slide">
+        <div class="testimonial">
+          <!-- Drobny błąd - przeskakujesz do h5, mimo ze w dokumencie nie ma ani jednaego h4 -->
+          <h5 class="testimonial__header">Moja najlepsza decyzja w życiu!</h5>
+          <blockquote class="testimonial__text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusantium quas quisquam non? Quas voluptate nulla minima
+            deleniti optio ullam nesciunt, numquam corporis et asperiores
+            laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
+            id alias reiciendis, perferendis facere pariatur dolore veniam
+            autem esse non voluptatem saepe provident nihil molestiae.
+          </blockquote>
+          <address class="testimonial__author">
+            <img src="img/testimonial-alicja.jpg" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">Alicja Nowak</h6>
+            <p class="testimonial__location">Warszawa</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="testimonial">
+          <h5 class="testimonial__header">
+            Drugi raz wybrałabym HEALTH CLUB
+          </h5>
+          <blockquote class="testimonial__text">
+            Quisquam itaque deserunt ullam, quia ea repellendus provident,
+            ducimus neque ipsam modi voluptatibus doloremque, corrupti
+            laborum. Incidunt numquam perferendis veritatis neque repellendus.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
+            deserunt exercitationem deleniti.
+          </blockquote>
+          <address class="testimonial__author">
+            <img src="img/testimonial-aneta.jpg" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">Aneta Kowalska</h6>
+            <p class="testimonial__location">Gdańsk</p>
+          </address>
+        </div>
+      </div>
+
+      <button class="slider__btn slider__btn--left">&larr;</button>
+      <button class="slider__btn slider__btn--right">&rarr;</button>
     </div>
+  </section>
 
-    <section class="section__mission" id="section--mission">
-      <div class="section__title--mission">
-        <h2 class="section__description">NASZA MISJA</h2>
-        <h1 class="section__header">Jesteśmy tu po to, by dbać o Ciebie<br />i Twoje zdrowie!</h1>
-        <button class="btn__mission">Dalej &rarr;</button>
-      </div>
-      
+  <footer class="footer">
+    <ul class="footer__nav">
+      <li class="footer__item">
+        <a class="footer__link" href="#">Miasta</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Nasza misja</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Opinie</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Dołącz do nasz</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Kontakt</a>
+      </li>
+    </ul>
+    <img src="img/white-leaf.png" alt="Logo" class="footer__logo" />
+  </footer>
+</body>
 
-    </section>
-
-    <section class="section" id="section--slider">
-      <div class="section__title section__title--testimonials">
-        <h2 class="section__description">OPINIE</h2>
-        <h3 class="section__header">Sprawdź, co mówią o nas inni</h3>
-      </div>
-
-      <div class="slider">
-        <div class="slide">
-          <div class="testimonial">
-            <h5 class="testimonial__header">Moja najlepsza decyzja w życiu!</h5>
-            <blockquote class="testimonial__text">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Accusantium quas quisquam non? Quas voluptate nulla minima
-              deleniti optio ullam nesciunt, numquam corporis et asperiores
-              laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
-              id alias reiciendis, perferendis facere pariatur dolore veniam
-              autem esse non voluptatem saepe provident nihil molestiae.
-            </blockquote>
-            <address class="testimonial__author">
-              <img
-                src="img/testimonial-alicja.jpg"
-                alt=""
-                class="testimonial__photo"
-              />
-              <h6 class="testimonial__name">Alicja Nowak</h6>
-              <p class="testimonial__location">Warszawa</p>
-            </address>
-          </div>
-        </div>
-
-        <div class="slide">
-          <div class="testimonial">
-            <h5 class="testimonial__header">
-              Drugi raz wybrałabym HEALTH CLUB
-            </h5>
-            <blockquote class="testimonial__text">
-              Quisquam itaque deserunt ullam, quia ea repellendus provident,
-              ducimus neque ipsam modi voluptatibus doloremque, corrupti
-              laborum. Incidunt numquam perferendis veritatis neque repellendus.
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
-              deserunt exercitationem deleniti.
-            </blockquote>
-            <address class="testimonial__author">
-              <img
-                src="img/testimonial-aneta.jpg"
-                alt=""
-                class="testimonial__photo"
-              />
-              <h6 class="testimonial__name">Aneta Kowalska</h6>
-              <p class="testimonial__location">Gdańsk</p>
-            </address>
-          </div>
-        </div>
-
-        <button class="slider__btn slider__btn--left">&larr;</button>
-        <button class="slider__btn slider__btn--right">&rarr;</button>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <ul class="footer__nav">
-        <li class="footer__item">
-          <a class="footer__link" href="#">Miasta</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="#">Nasza misja</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="#">Opinie</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="#">Dołącz do nasz</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__link" href="#">Kontakt</a>
-        </li>
-      </ul>
-      <img src="img/white-leaf.png" alt="Logo" class="footer__logo" />
-    </footer>
-  </body>
 </html>
