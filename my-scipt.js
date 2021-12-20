@@ -7,8 +7,11 @@ const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
 const form = document.querySelector('.modal__form');
 const username = document.getElementById('username');
 const surname = document.getElementById('surname');
-const age = document.getElementById('age');
+// const age = document.getElementById('age');
 const email = document.getElementById('email');
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav__links');
+const navLink = document.querySelectorAll('.nav__link');
 
 ////////////////////////////
 // DROPDOWN MENU
@@ -80,7 +83,7 @@ function checkInputs() {
   // trim to remove the whitespaces
   const usernameValue = username.value.trim();
   const surnameValue = surname.value.trim();
-  const ageValue = age.value.trim();
+  // const ageValue = age.value.trim();
   const emailValue = email.value.trim();
   let inputValidated = true;
 
@@ -98,12 +101,12 @@ function checkInputs() {
     setSuccessFor(surname);
   }
 
-  if (ageValue === '') {
-    setErrorFor(age, 'Wprowadź wiek');
-    inputValidated = false;
-  } else {
-    setSuccessFor(age);
-  }
+  // if (ageValue === '') {
+  //   setErrorFor(age, 'Wprowadź wiek');
+  //   inputValidated = false;
+  // } else {
+  //   setSuccessFor(age);
+  // }
 
   if (emailValue === '') {
     setErrorFor(email, 'Wprowadź adres e-mail');
@@ -136,7 +139,6 @@ function isEmail(email) {
   );
 }
 
-
 //////////////////////////////////////
 // Slider
 const slider = function () {
@@ -144,7 +146,6 @@ const slider = function () {
   const btnLeft = document.querySelector('.slider__btn--left');
   const btnRight = document.querySelector('.slider__btn--right');
 
-  
   let curSlide = 0;
   const maxSlide = slides.length;
 
@@ -187,10 +188,21 @@ const slider = function () {
     if (e.key === 'ArrowLeft') prevSlide();
     e.key === 'ArrowRight' && nextSlide();
   });
-
-  
 };
 slider();
 
+// HAMBURGER Z MACA
 ///////////////////////////////////////
+hamburger.addEventListener('click', mobileMenu);
+navLink.forEach(n => n.addEventListener('click', closeMenu));
+
+function mobileMenu() {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+}
+
+function closeMenu() {
+  hamburger.classList.remove('active');
+  navMenu.classList.remove('active');
+}
 ///////////////////////////////////////
