@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -9,22 +9,24 @@
       rel="stylesheet"
     />
     <link rel="shortcut icon" type="image/png" href="img/leaf.png" />
-    <link rel="stylesheet" href="my-style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <title>Health club | Dołącz do nas</title>
 
-    <script defer src="my-scipt.js"></script>
+    <script defer src="scipt.js"></script>
   </head>
   <body>
     <nav class="nav">
-      <img src="img/leaf.png" alt="leaf logo" class="nav__logo" />
-      <div class="logo__position">
-        <a
-          id="logo__weight"
-          class="nav__link"
-          href="https://www.healthclubs.com/"
-          >HEALTH CLUB</a
-        >
+      <div class="logo">
+        <img src="img/leaf.png" alt="leaf logo" class="nav__logo" />
+        <div class="logo__position">
+          <a
+            id="logo__weight"
+            class="nav__link-logo"
+            href="https://www.healthclubs.com/"
+            >HEALTH CLUB</a
+          >
+        </div>
       </div>
       <ul class="nav__links">
         <li class="nav__item">
@@ -90,21 +92,21 @@
     </div>
     <div class="overlay hidden"></div>
 
-    <div class="section-girl">
+    <section class="section-girl">
       <img
         src="img/sports-girl-with-dumbbells.jpg"
         alt="Girl"
         class="girl__img"
       />
-      <div class="girl__header">
+      <header class="girl__header">
         <h3>W zdrowym ciele zdrowy duch</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
           sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
           debitis ducimus.
         </p>
-      </div>
-    </div>
+      </header>
+    </section>
 
     <section class="section__mission" id="section--mission">
       <div class="section__title--mission">
@@ -125,7 +127,7 @@
       <div class="slider">
         <div class="slide">
           <div class="testimonial">
-            <h5 class="testimonial__header">Moja najlepsza decyzja w życiu!</h5>
+            <h4 class="testimonial__header">Moja najlepsza decyzja w życiu!</h4>
             <blockquote class="testimonial__text">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit.
               Accusantium quas quisquam non? Quas voluptate nulla minima
@@ -187,7 +189,7 @@
           <a class="footer__link" href="#">Opinie</a>
         </li>
         <li class="footer__item">
-          <a class="footer__link" href="#">Dołącz do nasz</a>
+          <a class="footer__link" href="#">Dołącz</a>
         </li>
         <li class="footer__item">
           <a class="footer__link" href="#">Kontakt</a>

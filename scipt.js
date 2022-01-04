@@ -48,7 +48,7 @@ document.querySelector('.nav__links').addEventListener('click', function (e) {
 //////////////////////////////////
 // FORM MODAL WINDOW
 const openModal = function (e) {
-  e.preventDefault();
+  // e.preventDefault();
   modal.classList.remove('hidden');
   overlay.classList.remove('hidden');
 };
@@ -87,14 +87,14 @@ function checkInputs() {
   const emailValue = email.value.trim();
   let inputValidated = true;
 
-  if (usernameValue === '') {
+  if (usernameValue.length < 1) {
     setErrorFor(username, 'Wprowadź imię');
     inputValidated = false;
   } else {
     setSuccessFor(username);
   }
 
-  if (surnameValue === '') {
+  if (surnameValue.length < 1) {
     setErrorFor(surname, 'Wprowadź nazwisko');
     inputValidated = false;
   } else {
@@ -108,7 +108,7 @@ function checkInputs() {
   //   setSuccessFor(age);
   // }
 
-  if (emailValue === '') {
+  if (emailValue.length < 1) {
     setErrorFor(email, 'Wprowadź adres e-mail');
     inputValidated = false;
   } else if (!isEmail(emailValue)) {
@@ -185,13 +185,17 @@ const slider = function () {
   btnLeft.addEventListener('click', prevSlide);
 
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'ArrowLeft') prevSlide();
+    e.key === 'ArrowLeft' && prevSlide();
     e.key === 'ArrowRight' && nextSlide();
+
+    // lub poniżej inny sposób
+    // if (e.key === 'ArrowLeft') prevSlide();
+    // e.key === 'ArrowRight' && nextSlide();
   });
 };
 slider();
 
-// HAMBURGER Z MACA
+// HAMBURGER
 ///////////////////////////////////////
 hamburger.addEventListener('click', mobileMenu);
 navLink.forEach(n => n.addEventListener('click', closeMenu));
