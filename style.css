@@ -105,22 +105,31 @@ body {
   display: block;
 }
 
-.nav__link:link,
-.nav__link:visited {
+.nav__link {
   font-size: 1.7rem;
   font-weight: 400;
   color: inherit;
   text-decoration: none;
   display: block;
+  cursor: pointer;
 }
 
 /* GREEN CIRCLE */
-.nav__link--btn:link,
-.nav__link--btn:visited {
+.nav__link--btn,
+.nav__link--btn {
   padding: 0.8rem 2.5rem;
   border-radius: 3rem;
   background-color: var(--color-primary);
   color: #222;
+}
+
+.nav__link-city {
+  font-size: 1.7rem;
+  font-weight: 400;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
 }
 
 .dropdown-content {
@@ -169,8 +178,7 @@ body {
   }
 
   /* GREEN CIRCLE */
-  .nav__link--btn:link,
-  .nav__link--btn:visited {
+  .nav__link--btn {
     padding: 0;
     border: none;
     border-radius: 0px;
@@ -178,8 +186,7 @@ body {
     color: inherit;
   }
 
-  .nav__link:link,
-  .nav__link:visited {
+  .nav__link {
     font-size: 2.7rem;
   }
 
@@ -392,8 +399,8 @@ body {
   }
 }
 
-/* SECTION girl */
-.section-girl {
+/* SECTION hero */
+.section-hero {
   margin-top: 6.2rem;
   margin-bottom: 6rem;
   display: flex;
@@ -402,41 +409,25 @@ body {
 }
 
 @media only screen and (min-width: 1028px) {
-  .section-girl {
+  .section-hero {
     flex-direction: row;
   }
 }
 
-@media only screen and (max-width: 1028px) {
-  .girl__header {
-    font-size: 2rem;
-    padding-top: 4rem;
-    padding-left: 7rem;
-    padding-right: 6rem;
-  }
-}
-
 @media only screen and (max-width: 960px) {
-  .girl__header {
-    font-size: 0.3rem;
-    padding-top: 2rem;
-    padding-left: 0rem;
-    padding-right: 0rem;
-  }
-
-  .section-girl {
+  .section-hero {
     padding: 0rem;
   }
 }
 
-.girl__img {
+.hero__img {
   height: 410px;
   padding-left: 7rem;
   /* max-width: 100%; */
 }
 
 @media only screen and (max-width: 1024px) {
-  .girl__img {
+  .hero__img {
     width: 100%;
     height: auto;
     padding-left: 0rem;
@@ -444,10 +435,14 @@ body {
   }
 }
 
-.girl__header {
+.hero__header {
+  padding: 2rem 3rem;
   font-size: 2rem;
-  padding-left: 7rem;
-  padding-right: 6rem;
+
+  @media only screen and (min-width: 960px) {
+    padding-left: 7rem;
+    padding-right: 6rem;
+  }
 }
 
 /* SECTION mission */
@@ -478,6 +473,13 @@ body {
   transition: all 0.3s;
 }
 
+@media only screen and (max-width: 610px) {
+  .btn__mission {
+    left: 30%;
+    margin-top: 3rem;
+  }
+}
+
 /* SECTION slider */
 @media only screen and (max-width: 890px) {
   .section__header {
@@ -505,9 +507,9 @@ body {
     display: none;
   }
 
-  .testimonial__text {
+  /* .testimonial__text {
     max-height: 30rem;
-  }
+  } */
 }
 
 .section {
@@ -557,6 +559,12 @@ body {
 
   /* THIS creates the animation! */
   transition: transform 1s;
+}
+
+@media only screen and (max-width: 610px) {
+  .slide {
+    height: 30rem;
+  }
 }
 
 .slider__btn {

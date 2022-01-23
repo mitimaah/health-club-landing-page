@@ -3,7 +3,7 @@
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
-const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnsOpenModal = document.querySelector('.btn--show-modal');
 const form = document.querySelector('.modal__form');
 const username = document.getElementById('username');
 const surname = document.getElementById('surname');
@@ -12,16 +12,20 @@ const email = document.getElementById('email');
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav__links');
 const navLink = document.querySelectorAll('.nav__link');
+const btnDropdownMenu = document.getElementById('dropdown_menu');
+const menuCity = document.querySelector('.menu_city');
 
 ////////////////////////////
 // DROPDOWN MENU
+menuCity.addEventListener('click', dropdownMenu);
+
 function dropdownMenu() {
-  document.getElementById('dropdownMenu').classList.toggle('show');
+  btnDropdownMenu.classList.toggle('show');
 }
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = e => {
-  if (!e.target.matches('.nav__link')) {
+  if (!e.target.matches('.nav__link-city')) {
     let dropdowns = document.getElementsByClassName('dropdown-content');
     let i;
     for (i = 0; i < dropdowns.length; i++) {
@@ -58,7 +62,7 @@ const closeModal = function () {
   overlay.classList.add('hidden');
 };
 
-btnsOpenModal.forEach(btn => btn.addEventListener('click', openModal));
+btnsOpenModal.addEventListener('click', openModal);
 
 btnCloseModal.addEventListener('click', closeModal);
 overlay.addEventListener('click', closeModal);
